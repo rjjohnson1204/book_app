@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test Page</title>
+  <title>Search Google Books</title>
   <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/base.css" />
 </head>
 <body>
-  <h1>Hello World</h1>
+  <form action="/searches" method="POST">
+    <label>Enter book search: 
+      <input type="text" name="search-field">
+    </label>
+    <label>Search titles
+      <input type="radio" name="searchby" value="intitle">
+    </label>
+    <label>Search authors
+      <input type="radio" name="searchby" value="inauthor">
+    </label>
+    <button type="submit">Search</button>
+  </form>
 </body>
 </html>
