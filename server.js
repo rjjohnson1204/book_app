@@ -21,3 +21,11 @@ app.set('view engine', 'ejs');
 app.get('/hello', (req, res) => {
   res.render('./pages/index');
 });
+
+app.get('/', (req, res) => {
+  res.render('./pages/index');
+});
+
+app.post('/searches', (req, res) => {
+  console.log('my request body:', req.body);
+});
