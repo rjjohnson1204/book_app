@@ -6,6 +6,9 @@ const cors = require('cors');
 app.use(cors());
 const superagent = require('superagent');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('./public'));
+
 
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
@@ -15,4 +18,6 @@ app.listen(PORT, () => {
 
 app.set('view engine', 'ejs');
 
-
+app.get('/hello', (req, res) => {
+  res.render('./pages/index');
+});
