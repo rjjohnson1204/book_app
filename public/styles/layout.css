@@ -1,0 +1,54 @@
+#head1 {
+  position: relative;
+  grid-area: head1;
+  width: 100vw;
+}
+
+#head1 > img {
+  position: absolute;
+  display: block;
+  right: 1vw;
+  top: 0;
+}
+
+#head2 {
+  grid-area: head2;
+  width: 100vw;
+}
+
+form {
+  grid-area: form;
+  width: 100vw;
+}
+
+#intitle, #inauthor, button {
+  display: block;
+  width: 50%;
+  border-radius: 7px;
+  background-color: goldenrod;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-size: 0.85em;
+}
+
+#input {
+  display: block;
+  width: 50%;
+  border-radius: 7px;
+  background-color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  font-size: 0.85em;
+}
+
+#textbox {
+  width: 90%;
+  border: 0 none transparent;
+  font-size: 1em;
+}

@@ -1,0 +1,8 @@
+body {
+  grid-template-columns: 100vw;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "head1"
+    "head2"
+    "form";
+}
