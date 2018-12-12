@@ -1,0 +1,45 @@
+h1{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4vw;
+
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border: 3px solid rgb(231, 231, 24);
+  border-radius: 5%;
+  box-shadow: .3vw .5vw rgb(105, 105, 103);
+  width: 25%;
+}
+
+#title{
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  /* margin-right: 10%; */
+  margin-top: .5%;
+  margin-bottom: .5%;
+  
+}
+
+#author{
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: .5%;
+  margin-bottom: .5%;
+  text-shadow:
+}
+#description{
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: .5%;
+  margin-bottom: .5%;
+  text-shadow:
+}
+
