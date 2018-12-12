@@ -26,6 +26,12 @@ app.get('/', (req, res) => {
   res.render('./pages/index');
 });
 
+// Error handler
+function handleError(err, res) {
+  console.error('ERROR', err);
+  res.render('./pages/error');
+}
+
 // Book model
 function Book(item) {
   this.thumbnail = item.volumeInfo.imageLinks.thumbnail || 'https://via.placeholder.com/128x200.png?text=Image+Unavailable';
@@ -46,5 +52,5 @@ function getResults(req, res) {
     });
     console.log('line 50: ', results);
     return results;
-  }).then(results => res.render('./pages/searches/show', {books: results}));
+  }).then(results => res.render('./pages/searches/show', {books: results})).catch(error => handleError(error));
 }
