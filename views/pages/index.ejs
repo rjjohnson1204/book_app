@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Google Books</title>
+  <title>My Bookshelf</title>
   <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/modules.css" />
 </head>
 <body>
-  <header id="head1">
-    Best Books!
-    <img src="/styles/menu.png">
-  </header>
-  <header id="head2">
-    Search by Title or Author
-  </header>
-  <form action="/searches" method="POST">
-    <label id="input">
-      <input id="textbox" type="text" name="search_field" placeholder="Enter title or author">
-    </label>
-    <label id="intitle">
-      <input type="radio" name="searchby" value="intitle" required>
-      Search titles
-    </label>
-    <label id="inauthor">
-      <input type="radio" name="searchby" value="inauthor">
-      Search authors
-    </label>
-    <button type="submit">Search</button>
-  </form>
+  <section class="book-view container">
+    <h1>My Books</h1>
+    <h2>Total Books: <%= results.length %></h2>
+    <ul>
+      <% results.forEach( book => { %>
+        <li class="book-item" data-id="<%= book.id %>">
+          <img src="<%= book.image_url %>">
+          <p>Title: <%= book.title %></p>
+          <p>Author: <%= book.author %></p>
+          <p>ISBN #: <%= book.isbn %></p>
+          <p>Bookshelf Name: <%= book.bookshelf %></p>
+          <p>Description: <%= book.description %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
 </body>
 </html>
