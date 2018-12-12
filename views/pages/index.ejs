@@ -4,6 +4,8 @@
   <title>Search Google Books</title>
   <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/modules.css" />
 </head>
 <body>
   <header id="head1">
@@ -13,19 +15,19 @@
   <header id="head2">
     Search by Title or Author
   </header>
-  <main>
-    <form action="/searches" method="POST">
-      <label>
-        <input type="text" name="search_field" placeholder="Enter title or author">
-      </label>
-      <label>Search titles
-        <input type="radio" name="searchby" value="intitle" required>
-      </label>
-      <label>Search authors
-        <input type="radio" name="searchby" value="inauthor">
-      </label>
-      <button type="submit">Search</button>
-    </form>
-  </main>
+  <form action="/searches" method="POST">
+    <label id="input">
+      <input id="textbox" type="text" name="search_field" placeholder="Enter title or author">
+    </label>
+    <label id="intitle">
+      <input type="radio" name="searchby" value="intitle" required>
+      Search titles
+    </label>
+    <label id="inauthor">
+      <input type="radio" name="searchby" value="inauthor">
+      Search authors
+    </label>
+    <button type="submit">Search</button>
+  </form>
 </body>
 </html>
