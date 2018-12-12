@@ -1,4 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:700|Nunito');
+
 body {
-  background-color: goldenrod;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(230, 230, 230);
+  display: grid;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5em;
+}
+
+#head1 {
+  background-color: rgb(100, 100, 100);
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  font-size: 2.25em;
+}
+
+#head2 {
+  background-color: rgb(235, 210, 72);
+  color: black;
+  text-align: center;
+}
+
+main {
+  background-color: darkgray;
 }
