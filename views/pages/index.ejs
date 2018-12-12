@@ -6,17 +6,26 @@
   <link rel="stylesheet" href="/styles/base.css" />
 </head>
 <body>
-  <form action="/searches" method="POST">
-    <label>Enter book search: 
-      <input type="text" name="search_field">
-    </label>
-    <label>Search titles
-      <input type="radio" name="searchby" value="intitle" required>
-    </label>
-    <label>Search authors
-      <input type="radio" name="searchby" value="inauthor">
-    </label>
-    <button type="submit">Search</button>
-  </form>
+  <header id="head1">
+    Best Books!
+    <img src="/styles/menu.png">
+  </header>
+  <header id="head2">
+    Search by Title or Author
+  </header>
+  <main>
+    <form action="/searches" method="POST">
+      <label>
+        <input type="text" name="search_field" placeholder="Enter title or author">
+      </label>
+      <label>Search titles
+        <input type="radio" name="searchby" value="intitle" required>
+      </label>
+      <label>Search authors
+        <input type="radio" name="searchby" value="inauthor">
+      </label>
+      <button type="submit">Search</button>
+    </form>
+  </main>
 </body>
 </html>
