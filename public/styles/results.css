@@ -1,3 +1,9 @@
+@import url( 'https://fonts.googleapis.com/css?family=Bree+Serif|Paytone+One|Prata');
+
+body{
+  
+}
+
 h1{
   margin-left: auto;
   margin-right: auto;
@@ -10,14 +16,16 @@ img{
   margin-right: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  border: 3px solid rgb(231, 231, 24);
+  border: 3px solid rgb(235, 210, 72);
   border-radius: 5%;
   box-shadow: .3vw .5vw rgb(105, 105, 103);
-  width: 25%;
+  width: 40%;
 }
 
 #title{
   text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 3vw;
   width: 50%;
   margin-left: 25%;
   /* margin-right: 10%; */
@@ -28,6 +36,8 @@ img{
 
 #author{
   text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 2.7vw;
   width: 50%;
   margin-left: 25%;
   margin-top: .5%;
@@ -36,10 +46,12 @@ img{
 }
 #description{
   text-align: center;
+  font-size: 2vw;
+  font-family: 'Prata', serif;
   width: 50%;
   margin-left: 25%;
-  margin-top: .5%;
-  margin-bottom: .5%;
+  margin-top: .6%;
+  margin-bottom: .6%;
   text-shadow:
 }
 
