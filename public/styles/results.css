@@ -7,7 +7,10 @@ body{
 h1{
   margin-left: auto;
   margin-right: auto;
-  font-size: 4vw;
+  font-size: 6vw;
+  font-family: 'Paytone One', sans-serif;
+  text-decoration: underline;
+  text-shadow: .2vw .2vw #757474;
 
 }
 img{
@@ -19,7 +22,7 @@ img{
   border: 3px solid rgb(235, 210, 72);
   border-radius: 5%;
   box-shadow: .3vw .5vw rgb(105, 105, 103);
-  width: 40%;
+  width: 35%;
 }
 
 #title{
@@ -55,3 +58,74 @@ img{
   text-shadow:
 }
 
+#hamburger{
+  margin-top: 0%;
+  margin-right: 0%;
+  /* display: block;
+  margin-left: 1%;
+  margin-right: -10%;
+
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* margin-top: 2%;
+  margin-bottom: 2%; */
+  /* border: 3px solid rgb(235, 210, 72);
+  border-radius: 5%; */
+}
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  float: right;
+  width: 22%;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: absolute; */
+  background-color: #f9f9f9;
+  /* min-width: 10px; */
+  z-index: 3;
+  float: right;
+
+}
+
+.dropdown-content a {
+  float: right;
+  color: rgb(194, 24, 24);
+  padding: 1vw 1vw;
+  text-decoration: none;
+  display: block;
+  text-align: vertical;
+  /* float: right; */
+  display : inline;
+  position:relative;
+
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: vertical;
+  
+
+  /* float: right; */
+}
+
+#link1{
+  display : inline;
+  position:relative;
+}
+#link2{
+  display : inline;
+  position:relative;
+}
+#link3{
+  display : inline;
+  position:relative;
+}
