@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book to Collection</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/modules.css" />
+</head>
+<body>
+  <main>
+    <section class="create-view container">
+      <h3>Add a book:</h3>
+        <form id="create-form" action="/add" method="post">
+          <fieldset>
+            <input type="text" name="author" placeholder="Author names">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="isbn" placeholder="ISBN">
+            <input type="text" name="image_url" placeholder="Image URL">
+            <textarea name="description" placeholder="Description of book"cols="30" rows="10"></textarea>
+            <input type="text" name="bookshelf" placeholder="Bookshelf name">
+            <button type="submit">Add this task</button>
+          </fieldset>
+        </form>
+    </section>
+  </main>
+</body>
+</html>
