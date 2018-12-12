@@ -36,18 +36,39 @@ function handleError(err, res) {
 // Route to main page of saved books
 app.get('/', getBooks);
 
-// app.get('/add', showForm);
-// app.post('/add', addBook)
+// Route to show book details
+app.get('/books/:book_id', getDetails);
+
+app.get('/add', showForm);
+app.post('/add', addBook);
 
 function getBooks(req, res) {
   let SQL = 'SELECT * from books;';
 
-  return client.query(SQL).then(results => res.render('./pages/index', {results: results.rows})).catch(err => console.error(err));
+  return client.query(SQL).then(results => res.render('./pages/index', {results: results.rows})).catch(err => handleError(err));
 }
 
-// function showForm(req, res) {
-//   res.render()
-// }
+function getDetails(req, res) {
+  let SQL = 'SELECT * FROM books WHERE id=$1;';
+  let values = [req.params.book_id];
+  console.log('getDetails values = ', values);
+
+  return client.query(SQL, values).then(result => {
+    return res.render('./pages/books/detail', {book: result.rows[0]});
+  })
+}
+
+function showForm(req, res) {
+  res.render('./pages/addForm')
+}
+
+function addBook (req, res) {
+  let {author, title, isbn, image_url, description, bookshelf} = req.body;
+  let SQL = 'INSERT INTO books(author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);';
+  let values = [author, title, isbn, image_url, description, bookshelf];
+
+  return client.query(SQL, values).then(res.redirect('/')).catch(err => handleError(err));
+}
 
 // Route to search page
 app.get('/search', (req, res) => {
