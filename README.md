@@ -1,7 +1,7 @@
 # book_app
 
 **Author**: Michael Goseco
-**Version**: 1.0.5
+**Version**: 1.1.3
 
 ## Overview
 This app lets you search Google Books for books based on title or author, then lets you save books to your own personal favorites list.
@@ -14,6 +14,8 @@ Server: node.js, express, dotenv. Middleware: cors, superagent, postgres. Views:
 
 ## Change Log
 12-11-2018: Added search form to search Google Books API based on title or author, and render results.
+
+12-12-2018: Added SQL database to save a personal collection of books, view details of each book, and add books to collection.
 
 ## Credits and Collaborations
 Collaborators: Ray Johnson

@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>My Bookshelf</title>
-  <link rel="stylesheet" href="/styles/reset.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/modules.css" />
+  <%- include('../layout/styleLinks') %>
 </head>
 <body>
+  <%- include('../layout/header') %>
+  <header id="head2">
+    My Books
+  </header>
   <section class="book-view container">
-    <h1>My Books</h1>
     <h2>Total Books: <%= results.length %></h2>
     <ul>
       <% results.forEach( book => { %>

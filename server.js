@@ -7,10 +7,19 @@ const cors = require('cors');
 app.use(cors());
 const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 // Middleware (captures req/res and modifies)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
+
+app.use(methodOverride((req, res) => {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    let method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 
 // Sets the server side templating engine
 app.set('view engine', 'ejs');
@@ -61,10 +70,12 @@ function getDetails(req, res) {
   })
 }
 
+// Shows the form to add a book to database
 function showForm(req, res) {
   res.render('./pages/addForm')
 }
 
+// Adds a book to the database
 function addBook (req, res) {
   let {author, title, isbn, image_url, description, bookshelf} = req.body;
   let SQL = 'INSERT INTO books(author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);';
@@ -80,9 +91,10 @@ app.get('/search', (req, res) => {
 
 // Book model
 function Book(item) {
-  this.thumbnail = item.volumeInfo.imageLinks.thumbnail || 'https://via.placeholder.com/128x200.png?text=Image+Unavailable';
+  this.thumbnail = item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : 'https://via.placeholder.com/128x200.png?text=Image+Unavailable';
   this.title = item.volumeInfo.title || 'N/A';
   this.author = item.volumeInfo.authors || 'N/A';
+  this.isbn = item.volumeInfo.industryIdentifiers[0].identifier || 'N/A';
   this.description = item.volumeInfo.description || 'N/A';
 }
 
@@ -96,10 +108,23 @@ function getResults(req, res) {
       const book = new Book(item);
       return book;
     });
-    console.log('line 50: ', results);
+    // console.log('line 50: ', results);
     return results;
   }).then(results => res.render('./pages/searches/show', {books: results})).catch(error => handleError(error, res));
 }
+
+// jQuery events to load form on search results
+// $('.selectBook').on('click', (event) => {
+//   let id = event.target.value;
+//   console.log('value: ', id);
+//   if ($(event.target.is(':hidden'))) {
+//     $(`#${id}`).slideDown();
+//     $(`.selectBook[value='${id}']`).text('Cancel');
+//   } else {
+//     $(`#${id}`).slideUp();
+//     $(`.selectBook[value='${id}']`).text('Select Book');
+//   }
+// })
 
 // Catch-all route
 app.get('*', (req, res) => res.status(404).send('404 Page not found'));

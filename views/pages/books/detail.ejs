@@ -2,8 +2,13 @@
 <html>
 <head>
   <title>Book Details</title>
+  <%- include('../../layout/styleLinks') %>
 </head>
 <body>
+  <%- include('../../layout/header') %>
+  <header id="head2">
+    Book Details
+  </header>
   <section class="detail-view container">
     <ul id="task">
       <li class="book-item" data-id="<%= book.id %>">

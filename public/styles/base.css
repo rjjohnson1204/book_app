@@ -26,3 +26,7 @@ body {
 form {
   background-color: darkgray;
 }
+
+.hide {
+  display: none;
+}
