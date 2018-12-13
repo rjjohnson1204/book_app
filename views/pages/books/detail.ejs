@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Details</title>
+  <%- include('../../layout/styleLinks') %>
+</head>
+<body>
+  <%- include('../../layout/header') %>
+  <header id="head2">
+    Book Details
+  </header>
+  <section class="detail-view container">
+    <ul id="task">
+      <li class="book-item" data-id="<%= book.id %>">
+        <img src="<%= book.image_url %>">
+        <p>Title: <%= book.title %></p>
+        <p>Author: <%= book.author %></p>
+        <p>ISBN #: <%= book.isbn %></p>
+        <p>Bookshelf Name: <%= book.bookshelf %></p>
+        <p>Description: <%= book.description %></p>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,19 +1,21 @@
 # book_app
 
 **Author**: Michael Goseco
-**Version**: 1.0.5
+**Version**: 1.1.3
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+This app lets you search Google Books for books based on title or author, then lets you save books to your own personal favorites list.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Create a server on node.js, build templatized pages with ejs, applying appropriate css styling on each. Add your dependencies to your server.js file, set a listening port for the local host and to the database.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Server: node.js, express, dotenv. Middleware: cors, superagent, postgres. Views: ejs, css, Google Books API.
 
 ## Change Log
 12-11-2018: Added search form to search Google Books API based on title or author, and render results.
+
+12-12-2018: Added SQL database to save a personal collection of books, view details of each book, and add books to collection.
 
 ## Credits and Collaborations
 Collaborators: Ray Johnson

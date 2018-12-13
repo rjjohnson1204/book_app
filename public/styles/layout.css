@@ -21,7 +21,7 @@ form {
   width: 100vw;
 }
 
-#intitle, #inauthor, button {
+#intitle, #inauthor, button, .button {
   display: block;
   width: 50%;
   border-radius: 7px;
@@ -51,4 +51,9 @@ form {
   width: 90%;
   border: 0 none transparent;
   font-size: 1em;
+}
+
+.button {
+  text-align: center;
+  text-decoration: none;
 }

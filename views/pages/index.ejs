@@ -1,51 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Google Books</title>
-  <link rel="stylesheet" href="/styles/reset.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/modules.css" />
-  <link rel="stylesheet" href="/styles/results.css" />
-
+  <title>My Bookshelf</title>
+  <%- include('../layout/styleLinks') %>
 </head>
 <body>
-  <header id="head1">
-    Best Books!
-<div class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn"><img id=hamburger src="/styles/menu.png">
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#" id=link1>Link 1</a>
-      <a href="#" id=link1>Link 2</a>
-      <a href="#" id=link1>Link 3</a>
-
-      <!-- <a href="#" id=link1>Link 1</a>
-      <a href="#" id=link2>Link 2</a>
-      <a href="#" id=link3>Link 3</a> -->
-    </div>
-  </div> 
-</div>
-    <!-- <img src="/styles/menu.png"> -->
-  </header>
+  <%- include('../layout/header') %>
   <header id="head2">
-    Search by Title or Author
+    My Books
   </header>
-  <form action="/searches" method="POST">
-    <label id="input">
-      <input id="textbox" type="text" name="search_field" placeholder="Enter title or author">
-    </label>
-    <label id="intitle">
-      <input type="radio" name="searchby" value="intitle" required>
-      Search titles
-    </label>
-    <label id="inauthor">
-      <input type="radio" name="searchby" value="inauthor">
-      Search authors
-    </label>
-    <button type="submit">Search</button>
-  </form>
+  <section class="book-view container">
+    <h2>Total Books: <%= results.length %></h2>
+    <ul>
+      <% results.forEach( book => { %>
+        <li class="book-item" data-id="<%= book.id %>">
+          <img src="<%= book.image_url %>">
+          <p>Title: <%= book.title %></p>
+          <p>Author: <%= book.author %></p>
+          <a class="button" href="/books/<%= book.id %>">View Details</a>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
 </body>
 </html>

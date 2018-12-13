@@ -2,10 +2,9 @@
 <html>
 <head> 
   <title>I am error</title>
-  <link rel="stylesheet" href="/styles/reset.css" />
-  <link rel="stylesheet" href="/styles/base.css" />
+  <%- include('../layout/styleLinks') %>
 </head>
 <body>
-  <h1>Something went wrong. Please try your search again.</h1>
+  <h1><%= error %></h1>
 </body>
 </html>

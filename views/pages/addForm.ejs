@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add a Book</title>
+  <%- include('../layout/styleLinks') %>
+</head>
+<body>
+  <%- include('../layout/header') %>
+  <header id="head2">
+    Add a Book
+  </header>
+  <main>
+    <section class="create-view container">
+      <h3>Add a book:</h3>
+        <form id="create-form" action="/add" method="post">
+          <fieldset>
+            <input type="text" name="author" placeholder="Author names" required>
+            <input type="text" name="title" placeholder="Title" required>
+            <input type="text" name="isbn" placeholder="ISBN" required>
+            <input type="text" name="image_url" placeholder="Image URL">
+            <textarea name="description" placeholder="Description of book"cols="30" rows="10"></textarea>
+            <input type="text" name="bookshelf" placeholder="Bookshelf name" required>
+            <button type="submit">Add Book</button>
+          </fieldset>
+        </form>
+    </section>
+  </main>
+</body>
+</html>
