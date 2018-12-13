@@ -19,10 +19,11 @@ img{
   margin-right: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  border: 3px solid rgb(235, 210, 72);
+  border-radius: 5%;
+  width: 35%;
+  border: 3px solid rgb(231, 231, 24);
   border-radius: 5%;
   box-shadow: .3vw .5vw rgb(105, 105, 103);
-  width: 35%;
 }
 
 #title{
@@ -55,22 +56,19 @@ img{
   margin-left: 25%;
   margin-top: .6%;
   margin-bottom: .6%;
-  text-shadow:
+
 }
 
 #hamburger{
   margin-top: 0%;
   margin-right: 0%;
-  /* display: block;
-  margin-left: 1%;
-  margin-right: -10%;
-
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* margin-top: 2%;
-  margin-bottom: 2%; */
-  /* border: 3px solid rgb(235, 210, 72);
-  border-radius: 5%; */
+  width: 7vw;
+  position: absolute;
+  top: 13%;
+  left: 92%;
+  border: 0px solid rgb(231, 231, 24);
+  border-radius: 0px;
+  box-shadow: 0vw 0vw rgb(105, 105, 103);
 }
 .dropdown .dropbtn {
   border: none;
@@ -92,19 +90,25 @@ img{
   /* min-width: 10px; */
   z-index: 3;
   float: right;
+  position: absolute;
+  top: 92.5%;
+  left: 87.5%;
+  width: 12%;
+  border-radius: 1vw;
 
 }
 
 .dropdown-content a {
   float: right;
-  color: rgb(194, 24, 24);
+  color: rgb(235, 210, 72);
   padding: 1vw 1vw;
   text-decoration: none;
-  display: block;
-  text-align: vertical;
-  /* float: right; */
-  display : inline;
-  position:relative;
+  /* display: block; */
+  /* text-align: vertical; */
+  /* display : inline; */
+  /* position:relative; */
+  width: 9%;
+  /* margin-right: 12%; */
 
 }
 
@@ -120,12 +124,7 @@ img{
 #link1{
   display : inline;
   position:relative;
+  font-size: 2vw;
+  width: 67%;
 }
-#link2{
-  display : inline;
-  position:relative;
-}
-#link3{
-  display : inline;
-  position:relative;
-}
+
