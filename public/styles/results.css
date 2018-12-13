@@ -1,0 +1,130 @@
+@import url( 'https://fonts.googleapis.com/css?family=Bree+Serif|Paytone+One|Prata');
+
+body{
+  
+}
+
+h1{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 6vw;
+  font-family: 'Paytone One', sans-serif;
+  text-decoration: underline;
+  text-shadow: .2vw .2vw #757474;
+
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 5%;
+  width: 35%;
+  border: 3px solid rgb(231, 231, 24);
+  border-radius: 5%;
+  box-shadow: .3vw .5vw rgb(105, 105, 103);
+}
+
+#title{
+  text-align: center;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 3vw;
+  width: 50%;
+  margin-left: 25%;
+  /* margin-right: 10%; */
+  margin-top: .5%;
+  margin-bottom: .5%;
+  
+}
+
+#author{
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 2.7vw;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: .5%;
+  margin-bottom: .5%;
+  text-shadow:
+}
+#description{
+  text-align: center;
+  font-size: 2vw;
+  font-family: 'Prata', serif;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: .6%;
+  margin-bottom: .6%;
+
+}
+
+#hamburger{
+  margin-top: 0%;
+  margin-right: 0%;
+  width: 7vw;
+  position: absolute;
+  top: 13%;
+  left: 92%;
+  border: 0px solid rgb(231, 231, 24);
+  border-radius: 0px;
+  box-shadow: 0vw 0vw rgb(105, 105, 103);
+}
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  float: right;
+  width: 22%;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: absolute; */
+  background-color: #f9f9f9;
+  /* min-width: 10px; */
+  z-index: 3;
+  float: right;
+  position: absolute;
+  top: 92.5%;
+  left: 87.5%;
+  width: 12%;
+  border-radius: 1vw;
+
+}
+
+.dropdown-content a {
+  float: right;
+  color: rgb(235, 210, 72);
+  padding: 1vw 1vw;
+  text-decoration: none;
+  /* display: block; */
+  /* text-align: vertical; */
+  /* display : inline; */
+  /* position:relative; */
+  width: 9%;
+  /* margin-right: 12%; */
+
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: vertical;
+  
+
+  /* float: right; */
+}
+
+#link1{
+  display : inline;
+  position:relative;
+  font-size: 2vw;
+  width: 67%;
+}
+
