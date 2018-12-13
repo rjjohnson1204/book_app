@@ -8,8 +8,11 @@ app.use(cors());
 const superagent = require('superagent');
 const pg = require('pg');
 
+// Middleware (captures req/res and modifies)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
+
+// Sets the server side templating engine
 app.set('view engine', 'ejs');
 
 // Loads .env variables, starts up app and opens connection to DB
@@ -30,7 +33,7 @@ app.get('/hello', (req, res) => {
 // Error handler
 function handleError(err, res) {
   console.error('ERROR', err);
-  res.render('./pages/error');
+  res.render('./pages/error', {error: 'Something went wrong! Please refresh your page.'});
 }
 
 // Route to main page of saved books
@@ -45,7 +48,7 @@ app.post('/add', addBook);
 function getBooks(req, res) {
   let SQL = 'SELECT * from books;';
 
-  return client.query(SQL).then(results => res.render('./pages/index', {results: results.rows})).catch(err => handleError(err));
+  return client.query(SQL).then(results => res.render('./pages/index', {results: results.rows})).catch(err => handleError(err, res));
 }
 
 function getDetails(req, res) {
@@ -67,7 +70,7 @@ function addBook (req, res) {
   let SQL = 'INSERT INTO books(author, title, isbn, image_url, description, bookshelf) VALUES ($1, $2, $3, $4, $5, $6);';
   let values = [author, title, isbn, image_url, description, bookshelf];
 
-  return client.query(SQL, values).then(res.redirect('/')).catch(err => handleError(err));
+  return client.query(SQL, values).then(res.redirect('/')).catch(err => handleError(err, res));
 }
 
 // Route to search page
@@ -95,7 +98,7 @@ function getResults(req, res) {
     });
     console.log('line 50: ', results);
     return results;
-  }).then(results => res.render('./pages/searches/show', {books: results})).catch(error => handleError(error));
+  }).then(results => res.render('./pages/searches/show', {books: results})).catch(error => handleError(error, res));
 }
 
 // Catch-all route
